@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог светящихся букетов</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left-section">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Логотип" class="logo">
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-button">Каталог</button>
+                <button class="nav-button">Контакты</button>
+                <button class="nav-button">Отзывы</button>
+                <button class="nav-button" onclick="window.location.href='delivery.html'">Доставка и оплата</button>
+            </nav>
+        </div>
+        <button class="message-button" onclick="openQuestionPopup()">
+            <i class="fas fa-comment"></i>
+        </button>
+    </header>
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-heading">Доставка светящихся букетов<br>Санкт-Петербург</h1>
+                <div class="phone-section">
+                    <i class="fas fa-phone-alt phone-icon"></i>
+                    <a href="tel:+79215318960" class="phone-number">+7(921)-531-89-60</a>
+                </div>
+            </div>
+            <div class="features-section">
+                <button class="feature-button" disabled>
+                    <i class="fas fa-truck feature-icon"></i>
+                    Бесплатная доставка
+                </button>
+                <button class="feature-button" disabled>
+                    <i class="fas fa-camera feature-icon"></i>
+                    Фото перед отправкой
+                </button>
+                <button class="feature-button" disabled>
+                    <i class="fas fa-clock feature-icon"></i>
+                    Работаем 24/7
+                </button>
+                <button class="feature-button" onclick="openOrderPopup()">
+                    <i class="fas fa-shopping-cart feature-icon"></i>
+                    Заказать
+                </button>
+            </div>
+        </div>
+        
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide">
+                    <img src="1.jpg" alt="Фото 1">
+                </div>
+                <div class="slide">
+                    <img src="2.jpg" alt="Фото 2">
+                </div>
+                <div class="slide">
+                    <img src="3.jpg" alt="Фото 3">
+                </div>
+                <div class="slide">
+                    <img src="4.jpg" alt="Фото 4">
+                </div>
+            </div>
+            
+            <button class="slider-button prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-button next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="slider-dots">
+                <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Секция с категориями товаров -->
+    <section class="products-section">
+        <!-- Хиты недели -->
+        <div class="category-section">
+            <h2 class="category-title">Хиты недели</h2>
+            <div class="products-grid">
+                <!-- Алый из Новинок -->
+                <div class="product-card" onclick="openPopup('hit1')">
+                    <div class="product-image">
+                        <img src="11.jpg" alt="Новый букет 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Алый"</h3>
+                        <div class="product-price">2300 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <!-- Единорог и Малина из Букетов -->
+                <div class="product-card" onclick="openPopup('hit2')">
+                    <div class="product-image">
+                        <img src="21.jpg" alt="Букет 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Единорог"</h3>
+                        <div class="product-price">1500 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('hit3')">
+                    <div class="product-image">
+                        <img src="24.jpg" alt="Букет 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Малина"</h3>
+                        <div class="product-price">2700 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <!-- M из Композиций -->
+                <div class="product-card" onclick="openPopup('hit4')">
+                    <div class="product-image">
+                        <img src="33.jpg" alt="Композиция 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящаяся композиция "M"</h3>
+                        <div class="product-price">2200 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Попапы для карточек из Хитов недели -->
+        <div class="popup-overlay" id="hit1">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('hit1')">&times;</button>
+                <div class="popup-image">
+                    <img src="11.jpg" alt="Светящийся букет Алый">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Алый"</h2>
+                    <div class="popup-description">
+                        Роскошный букет в алых тонах из бабочек, напечатанных на премиальной бумаге с использованием передовых технологий печати. Дополнен сублимированной гипсофилой и оснащен встроенной LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек премиального качества<br>
+                        • 2 ветки сублимированной гипсофилы<br>
+                        • Холодный белый свет подсветки<br>
+                        • Элегантная упаковка
+                    </div>
+                    <div class="popup-price">2300 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="hit2">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('hit2')">&times;</button>
+                <div class="popup-image">
+                    <img src="21.jpg" alt="Светящийся букет Единорог">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Единорог"</h2>
+                    <div class="popup-description">
+                        Волшебный букет из бабочек в нежных пастельных тонах, напечатанных с использованием технологии высокоточной цветопередачи. Оснащен мягкой внутренней LED-подсветкой с эффектом радужных бликов.
+                        <br><br>
+                        • 27 бабочек с точной цветопередачей<br>
+                        • Воздушная композиция<br>
+                        • Зеленый свет подсветки<br>
+                        • Стильная упаковка
+                    </div>
+                    <div class="popup-price">1500 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="hit3">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('hit3')">&times;</button>
+                <div class="popup-image">
+                    <img src="24.jpg" alt="Светящийся букет Малина">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Малина"</h2>
+                    <div class="popup-description">
+                        Яркий букет из бабочек в малиновых оттенках, напечатанных на премиальной бумаге. LED-подсветка создает мягкое, уютное освещение с эффектом радужных бликов.
+                        <br><br>
+                        • 51 бабочка с насыщенными цветами<br>
+                        • Пленка хамелеон для радужных бликов<br>
+                        • Теплый белый свет подсветки<br>
+                        • Премиальная упаковка
+                    </div>
+                    <div class="popup-price">2700 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="hit4">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('hit4')">&times;</button>
+                <div class="popup-image">
+                    <img src="33.jpg" alt="Светящаяся композиция M">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящаяся композиция "M"</h2>
+                    <div class="popup-description">
+                        Элегантная композиция среднего размера из бабочек, напечатанных с использованием технологии высокой детализации. Оснащена мягкой внутренней LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек с детальной проработкой<br>
+                        • Воздушная композиция<br>
+                        • Теплый белый свет подсветки<br>
+                        • Элегантная упаковка
+                    </div>
+                    <div class="popup-price">2200 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Попапы для категории Новинки -->
+        <div class="popup-overlay" id="new1">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('new1')">&times;</button>
+                <div class="popup-image">
+                    <img src="11.jpg" alt="Светящийся букет Алый">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Алый"</h2>
+                    <div class="popup-description">
+                        Роскошный букет в алых тонах из бабочек, напечатанных на премиальной бумаге с использованием передовых технологий печати. Дополнен сублимированной гипсофилой и оснащен встроенной LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек премиального качества<br>
+                        • 2 ветки сублимированной гипсофилы<br>
+                        • Холодный белый свет подсветки<br>
+                        • Элегантная упаковка
+                    </div>
+                    <div class="popup-price">2300 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="new2">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('new2')">&times;</button>
+                <div class="popup-image">
+                    <img src="12.jpg" alt="Светящийся букет Бирюза">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Бирюза"</h2>
+                    <div class="popup-description">
+                        Нежный букет из бабочек в бирюзовых оттенках, напечатанных с использованием технологии высокой цветопередачи. Оснащен встроенной LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек с точной цветопередачей<br>
+                        • Воздушная композиция<br>
+                        • Зеленый свет подсветки<br>
+                        • Стильная упаковка
+                    </div>
+                    <div class="popup-price">2100 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="new3">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('new3')">&times;</button>
+                <div class="popup-image">
+                    <img src="13.jpg" alt="Светящийся букет Облако">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Облако"</h2>
+                    <div class="popup-description">
+                        Воздушный букет из бабочек в белых тонах, напечатанных на премиальной бумаге. Дополнен сублимированной гипсофилой и оснащен деликатной LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек премиального качества<br>
+                        • 2 ветки бирюзовой гипсофилы<br>
+                        • Холодный белый свет подсветки<br>
+                        • Изящная упаковка
+                    </div>
+                    <div class="popup-price">2300 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="new4">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('new4')">&times;</button>
+                <div class="popup-image">
+                    <img src="14.jpg" alt="Светящийся букет Зефир">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Зефир"</h2>
+                    <div class="popup-description">
+                        Нежный букет из бабочек в пастельно-розовых тонах, напечатанных с использованием технологии мягких оттенков. Оснащен внутренней LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек с нежными оттенками<br>
+                        • Воздушная композиция<br>
+                        • Розовый свет подсветки<br>
+                        • Романтичная упаковка
+                    </div>
+                    <div class="popup-price">1900 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Попапы для категории Букеты -->
+        <div class="popup-overlay" id="bouquet1">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('bouquet1')">&times;</button>
+                <div class="popup-image">
+                    <img src="21.jpg" alt="Светящийся букет Единорог">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Единорог"</h2>
+                    <div class="popup-description">
+                        Волшебный букет из бабочек в нежных пастельных тонах, напечатанных с использованием технологии высокоточной цветопередачи. Оснащен мягкой внутренней LED-подсветкой с эффектом радужных бликов.
+                        <br><br>
+                        • 17 бабочек с точной цветопередачей<br>
+                        • Пленка хамелеон для радужных бликов<br>
+                        • Холодный белый свет подсветки<br>
+                        • Оригинальная упаковка
+                    </div>
+                    <div class="popup-price">1500 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="bouquet2">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('bouquet2')">&times;</button>
+                <div class="popup-image">
+                    <img src="22.jpg" alt="Светящийся букет Монотон">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Монотон"</h2>
+                    <div class="popup-description">
+                        Элегантный букет из бабочек в монохромной гамме, напечатанных на премиальной бумаге. Дополнен сублимированной гипсофилой и оснащен внутренней LED-подсветкой.
+                        <br><br>
+                        • 17 бабочек премиального качества<br>
+                        • 1 ветка бирюзовой гипсофилы<br>
+                        • Синий свет подсветки<br>
+                        • Стильная упаковка
+                    </div>
+                    <div class="popup-price">1400 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="bouquet3">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('bouquet3')">&times;</button>
+                <div class="popup-image">
+                    <img src="23.jpg" alt="Светящийся букет Ночь">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Ночь"</h2>
+                    <div class="popup-description">
+                        Таинственный букет из бабочек в темных тонах, напечатанных с использованием технологии глубокого цвета. Дополнен сублимированной гипсофилой и оснащен эффектной LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек с глубокими оттенками<br>
+                        • 2 ветки гипсофилы (розовая и голубая)<br>
+                        • Холодный белый свет подсветки<br>
+                        • Элегантная упаковка
+                    </div>
+                    <div class="popup-price">2100 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="bouquet4">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('bouquet4')">&times;</button>
+                <div class="popup-image">
+                    <img src="24.jpg" alt="Светящийся букет Малина">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Малина"</h2>
+                    <div class="popup-description">
+                        Яркий букет из бабочек в малиновых оттенках, напечатанных на премиальной бумаге. LED-подсветка создает мягкое, уютное освещение с эффектом радужных бликов.
+                        <br><br>
+                        • 51 бабочка с насыщенными цветами<br>
+                        • Пленка хамелеон для радужных бликов<br>
+                        • Теплый белый свет подсветки<br>
+                        • Премиальная упаковка
+                    </div>
+                    <div class="popup-price">2700 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Попапы для категории Композиции -->
+        <div class="popup-overlay" id="comp1">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('comp1')">&times;</button>
+                <div class="popup-image">
+                    <img src="31.jpg" alt="Светящаяся композиция XXL">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящаяся композиция "XXL"</h2>
+                    <div class="popup-description">
+                        Роскошная крупная композиция из бабочек, напечатанных на премиальной бумаге, дополненная свежими альстромериями. Оснащена продуманной системой LED-подсветки.
+                        <br><br>
+                        • 71 бабочка премиального качества<br>
+                        • 15 свежих альстромерий<br>
+                        • Теплый белый свет подсветки<br>
+                        • Премиальная упаковка
+                    </div>
+                    <div class="popup-price">5300 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="comp2">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('comp2')">&times;</button>
+                <div class="popup-image">
+                    <img src="32.jpg" alt="Светящаяся композиция L">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящаяся композиция "L"</h2>
+                    <div class="popup-description">
+                        Большая композиция из бабочек, напечатанных с использованием технологии высокой детализации. Оснащена эффектной внутренней LED-подсветкой.
+                        <br><br>
+                        • 37 бабочек разных размеров<br>
+                        • Воздушная композиция<br>
+                        • Теплый белый свет подсветки<br>
+                        • Стильная упаковка
+                    </div>
+                    <div class="popup-price">3100 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="comp3">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('comp3')">&times;</button>
+                <div class="popup-image">
+                    <img src="33.jpg" alt="Светящаяся композиция M">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящаяся композиция "M"</h2>
+                    <div class="popup-description">
+                        Элегантная композиция среднего размера из бабочек, напечатанных с использованием технологии высокой детализации. Оснащена мягкой внутренней LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек с детальной проработкой<br>
+                        • Воздушная композиция<br>
+                        • Теплый белый свет подсветки<br>
+                        • Элегантная упаковка
+                    </div>
+                    <div class="popup-price">2200 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="comp4">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('comp4')">&times;</button>
+                <div class="popup-image">
+                    <img src="34.jpg" alt="Светящаяся композиция S">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящаяся композиция "S"</h2>
+                    <div class="popup-description">
+                        Компактная композиция из бабочек, напечатанных на качественной бумаге. Оснащена деликатной LED-подсветкой.
+                        <br><br>
+                        • 17 бабочек малого размера<br>
+                        • Компактная композиция<br>
+                        • Фиолетовый свет подсветки<br>
+                        • Компактная упаковка
+                    </div>
+                    <div class="popup-price">1400 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Попапы для категории Необычные букеты -->
+        <div class="popup-overlay" id="unusual1">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('unusual1')">&times;</button>
+                <div class="popup-image">
+                    <img src="41.jpg" alt="Светящийся букет Снежинка">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Снежинка"</h2>
+                    <div class="popup-description">
+                        Волшебный букет из бабочек в холодных тонах, напечатанных с использованием технологии перламутрового эффекта. Оснащен мягкой внутренней LED-подсветкой.
+                        <br><br>
+                        • 17 бабочек с перламутровым эффектом<br>
+                        • Воздушная пышная упаковка<br>
+                        • Теплый белый свет подсветки<br>
+                        • Праздничная упаковка
+                    </div>
+                    <div class="popup-price">2100 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="unusual2">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('unusual2')">&times;</button>
+                <div class="popup-image">
+                    <img src="42.jpg" alt="Светящийся букет Неон">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Неон"</h2>
+                    <div class="popup-description">
+                        Яркий летний букет из бабочек в неоновых оттенках, напечатанных с использованием флуоресцентных красок. Дополнен сублимированной гипсофилой и оснащен эффектной LED-подсветкой.
+                        <br><br>
+                        • 27 бабочек с неоновым эффектом<br>
+                        • 2 ветки бирюзовой гипсофилы<br>
+                        • Холодный белый свет подсветки<br>
+                        • Воздушная упаковка неоново-зеленого цвета
+                    </div>
+                    <div class="popup-price">3000 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="unusual3">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('unusual3')">&times;</button>
+                <div class="popup-image">
+                    <img src="43.jpg" alt="Светящийся букет Нежность">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Нежность"</h2>
+                    <div class="popup-description">
+                        Изысканный букет из бабочек в пастельных тонах, напечатанных с использованием технологии мягких оттенков. Оснащен нежной внутренней LED-подсветкой.
+                        <br><br>
+                        • 17 бабочек с нежными оттенками<br>
+                        • Воздушная композиция<br>
+                        • Теплый белый свет подсветки<br>
+                        • Элегантная упаковка
+                    </div>
+                    <div class="popup-price">1800 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-overlay" id="unusual4">
+            <div class="popup-content">
+                <button class="popup-close" onclick="closePopup('unusual4')">&times;</button>
+                <div class="popup-image">
+                    <img src="44.jpg" alt="Светящийся букет Свадебный">
+                </div>
+                <div class="popup-info">
+                    <h2 class="popup-title">Светящийся букет "Свадебный"</h2>
+                    <div class="popup-description">
+                        Роскошный свадебный букет из бабочек, напечатанных на премиальной бумаге с перламутровым эффектом. Дополнен свежей гипсофилой и оснащен деликатной LED-подсветкой.
+                        <br><br>
+                        • 13 бабочек с перламутровым эффектом<br>
+                        • 4 ветки свежей гипсофилы<br>
+                        • Белый свет подсветки<br>
+                        • Премиальная свадебная упаковка
+                    </div>
+                    <div class="popup-price">2900 ₽</div>
+                    <button class="popup-order-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Новинки -->
+        <div class="category-section">
+            <h2 class="category-title">Новинки</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="openPopup('new1')">
+                    <div class="popular-badge">Популярно</div>
+                    <div class="product-image">
+                        <img src="11.jpg" alt="Новый букет 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Алый"</h3>
+                        <div class="product-price">2300 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('new2')">
+                    <div class="product-image">
+                        <img src="12.jpg" alt="Новый букет 2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Бирюза"</h3>
+                        <div class="product-price">2100 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('new3')">
+                    <div class="product-image">
+                        <img src="13.jpg" alt="Новый букет 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Облако"</h3>
+                        <div class="product-price">2300 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('new4')">
+                    <div class="product-image">
+                        <img src="14.jpg" alt="Новый букет 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Зефир"</h3>
+                        <div class="product-price">1900 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Букеты -->
+        <div class="category-section">
+            <h2 class="category-title">Букеты</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="openPopup('bouquet1')">
+                    <div class="popular-badge">Популярно</div>
+                    <div class="product-image">
+                        <img src="21.jpg" alt="Букет 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Единорог"</h3>
+                        <div class="product-price">1500 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('bouquet2')">
+                    <div class="product-image">
+                        <img src="22.jpg" alt="Букет 2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Монотон"</h3>
+                        <div class="product-price">1400 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('bouquet3')">
+                    <div class="product-image">
+                        <img src="23.jpg" alt="Букет 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Ночь"</h3>
+                        <div class="product-price">2100 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('bouquet4')">
+                    <div class="popular-badge">Популярно</div>
+                    <div class="product-image">
+                        <img src="24.jpg" alt="Букет 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Малина"</h3>
+                        <div class="product-price">2700 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Композиции -->
+        <div class="category-section">
+            <h2 class="category-title">Композиции</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="openPopup('comp1')">
+                    <div class="product-image">
+                        <img src="31.jpg" alt="Композиция 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящаяся композиция "XXL"</h3>
+                        <div class="product-price">5300 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('comp2')">
+                    <div class="product-image">
+                        <img src="32.jpg" alt="Композиция 2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящаяся композиция "L"</h3>
+                        <div class="product-price">3100 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('comp3')">
+                    <div class="popular-badge">Популярно</div>
+                    <div class="product-image">
+                        <img src="33.jpg" alt="Композиция 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящаяся композиция "M"</h3>
+                        <div class="product-price">2200 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('comp4')">
+                    <div class="product-image">
+                        <img src="34.jpg" alt="Композиция 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящаяся композиция "S"</h3>
+                        <div class="product-price">1400 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Необычные букеты -->
+        <div class="category-section">
+            <h2 class="category-title">Необычные букеты</h2>
+            <div class="products-grid">
+                <div class="product-card" onclick="openPopup('unusual1')">
+                    <div class="product-image">
+                        <img src="41.jpg" alt="Необычный букет 1">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Снежинка"</h3>
+                        <div class="product-price">2100 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('unusual2')">
+                    <div class="product-image">
+                        <img src="42.jpg" alt="Необычный букет 2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Неон"</h3>
+                        <div class="product-price">3000 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('unusual3')">
+                    <div class="product-image">
+                        <img src="43.jpg" alt="Необычный букет 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Нежность"</h3>
+                        <div class="product-price">1800 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+                <div class="product-card" onclick="openPopup('unusual4')">
+                    <div class="product-image">
+                        <img src="44.jpg" alt="Необычный букет 4">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Светящийся букет "Свадебный"</h3>
+                        <div class="product-price">2900 ₽</div>
+                        <button class="product-button" onclick="openOrderPopup(); event.stopPropagation();">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция FAQ с увеличенным отступом -->
+    <section class="faq-section" style="margin-top: 100px;">
+        <h2 class="faq-title">Часто задаваемые вопросы</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Как заказать доставку букета?</div>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    Заказ на доставку букетов можно оформить через <a href="#" class="pink-text" onclick="openOrderPopup()">Форму</a>. Кроме того, Вы можете связаться с нами для оформления заказа по телефону +7 (921) 531-89-60.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Как оплатить заказ?</div>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    Оплатить заказ можно одним из перечисленных способов:
+                    <br><br>
+                    • Наличными или банковской картой курьеру при получении заказа<br>
+                    • Наличными или банковской картой нашем цветочном салоне, если Вы забираете заказ самостоятельно<br>
+                    • После ответа менеджера в сообщениях с помощью банковской карты
+                    <a href="delivery.html" class="more-info">Подробнее об оплате и доставке</a>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">В какое время доставляются заказы?</div>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    Доставка букетов курьером по Санкт-Петербургу и Лен. области осуществляется 24 часа. Если Вы хотите оформить заказ - обратитесь к менеджеру ответ прийдёт в течении 10 минут. График обработки заявок на сайте 24 часа 7 дней в неделю.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">За сколько времени лучше оформлять заказ?</div>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    Лучше всего оформлять заказ за 2 дня до желаемого времени доставки. При срочных заказах время выполнения Вашей заявки составит 2 часа.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Можно ли заказать анонимную доставку букета?</div>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    Скажите менеджеру, что Вы хотите сделать анонимную доставку, курьер доставит Ваш заказ, не сообщая имя отправителя.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="accordion-title">Как отследить состояние заказа?</div>
+                    <i class="fas fa-chevron-down accordion-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    Для отслеживания статуса заказа свяжитесь с менеджером любым удобным для Вас способом.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ask-question-container" style="margin: 80px 0;">
+        <button class="ask-question-button">
+            Задать вопрос
+        </button>
+    </div>
+
+    <!-- Попап для формы вопроса -->
+    <div class="popup-overlay" id="question-popup">
+        <div class="popup-content question-popup-content">
+            <button class="popup-close" onclick="closeQuestionPopup()">&times;</button>
+            <div class="question-form">
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="logo">
+                </div>
+                <h2 class="question-title">Задать вопрос</h2>
+                <div class="form-group">
+                    <label for="phone">Ваш номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label for="question">Задать вопрос</label>
+                    <textarea id="question" name="question" required></textarea>
+                </div>
+                <button class="submit-button" onclick="submitQuestion()">Отправить</button>
+                <p class="privacy-policy">
+                    Нажимая на кнопку, Вы соглашаетесь с <a href="#" class="pink-text">Политикой Конфиденциальности</a> по обработке персональных данных.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Попап для формы заказа -->
+    <div class="popup-overlay" id="order-popup">
+        <div class="popup-content question-popup-content">
+            <button class="popup-close" onclick="closeOrderPopup()">&times;</button>
+            <div class="question-form">
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="logo">
+                </div>
+                <h2 class="question-title">Оформление заказа</h2>
+                <p class="order-notice">Оставьте ваши контактные данные, и наш менеджер свяжется с вами для оформления заказа.</p>
+                <div class="form-group">
+                    <label for="order-name">Ваше имя</label>
+                    <input type="text" id="order-name" name="order-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="order-phone">Номер телефона</label>
+                    <input type="tel" id="order-phone" name="order-phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label for="order-email">Почта</label>
+                    <input type="email" id="order-email" name="order-email" placeholder="example@mail.com" required>
+                </div>
+                <button class="submit-button" onclick="submitOrder()">Отправить</button>
+                <p class="privacy-policy">
+                    Нажимая на кнопку, Вы соглашаетесь с <a href="#" class="pink-text">Политикой Конфиденциальности</a> по обработке персональных данных.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомление об отправке -->
+    <div class="notification" id="success-notification">
+        Ваше сообщение отправлено!
+    </div>
+
+    <!-- Секция отзывов -->
+    <section class="reviews-section">
+        <h2 class="section-title">ОТЗЫВЫ</h2>
+        <div class="reviews-carousel">
+            <div class="reviews-wrapper">
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Заказывала букет "Малина" на день рождения подруги. Очень красивое и необычное исполнение! Подсветка работает отлично, подруга в восторге!"
+                        </div>
+                        <div class="review-author">Анна</div>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Спасибо за чудесную композицию XXL! Такого эффектного подарка я ещё не дарил. Доставка точно в срок, всё как договаривались."
+                        </div>
+                        <div class="review-author">Михаил</div>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Заказывала свадебный букет, результат превзошёл все ожидания! Очень нежное и красивое сочетание бабочек и гипсофилы. Спасибо!"
+                        </div>
+                        <div class="review-author">Елена</div>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Букет "Единорог" стал прекрасным подарком для дочки! Она не могла оторвать глаз от светящихся бабочек. Спасибо за такую красоту!"
+                        </div>
+                        <div class="review-author">Ольга</div>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Заказывал букет "Неон" девушке, это было что-то невероятное! Особенно эффектно смотрится вечером. Однозначно буду заказывать ещё!"
+                        </div>
+                        <div class="review-author">Дмитрий</div>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Композиция "M" превзошла все ожидания! Очень красивое сочетание бабочек и подсветки. Менеджер помог с выбором, доставка вовремя."
+                        </div>
+                        <div class="review-author">Мария</div>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content">
+                        <div class="review-text">
+                            "Спасибо за букет "Облако"! Такой воздушный и нежный, как я и хотела. Отдельное спасибо за оперативную доставку в день заказа!"
+                        </div>
+                        <div class="review-author">Ирина</div>
+                    </div>
+                </div>
+            </div>
+            <button class="review-nav prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="review-nav next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="review-dots"></div>
+        </div>
+    </section>
+
+    <div class="add-review-container" style="margin: 80px 0; display: flex; justify-content: center;">
+        <button class="ask-question-button add-review-button">
+            Добавить отзыв
+        </button>
+    </div>
+
+    <!-- Попап для добавления отзыва -->
+    <div class="popup-overlay" id="review-popup">
+        <div class="popup-content question-popup-content">
+            <button class="popup-close" onclick="closeReviewPopup()">&times;</button>
+            <div class="question-form">
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="logo">
+                </div>
+                <h2 class="question-title">Напишите отзыв о нашей работе</h2>
+                <p class="review-notice">Вскоре Ваш отзыв появится на сайте.</p>
+                <div class="form-group">
+                    <label for="review-name">Ваше имя</label>
+                    <input type="text" id="review-name" name="review-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-phone">Номер телефона, который указывался при заказе</label>
+                    <input type="tel" id="review-phone" name="review-phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-email">Почта, которая указывалась при заказе</label>
+                    <input type="email" id="review-email" name="review-email" placeholder="example@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Ваш отзыв</label>
+                    <textarea id="review-text" name="review-text" required></textarea>
+                </div>
+                <button class="submit-button" onclick="submitReview()">Отправить</button>
+                <p class="privacy-policy">
+                    Нажимая на кнопку, Вы соглашаетесь с <a href="#" class="pink-text">Политикой Конфиденциальности</a> по обработке персональных данных.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="footer-logo">
+                </div>
+                <p class="footer-description">Светящиеся букеты в Санкт-Петербурге</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="footer-contacts">
+                    <p><i class="fas fa-phone"></i> +7(921)-531-89-60</p>
+                    <p><i class="fas fa-envelope"></i> info@butterfly-bouquets.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Руднева, 2, Санкт-Петербург</p>
+                    <p><i class="fas fa-clock"></i> Время работы для самовывоза: ежедневно 10.00-20.00</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Информация</h3>
+                <ul class="footer-info-list">
+                    <li><a href="delivery.html">Доставка и оплата</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="https://vk.com/club223812708" target="_blank" class="social-link"><i class="fab fa-vk"></i></a>
+                    <a href="https://www.avito.ru/brands/e96a829c23453893444181c5e47b91c1?src=sharing" target="_blank" class="social-link">
+                        <span class="avito-icon">A</span>
+                    </a>
+                    <a href="https://wa.me/79215318960" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Butterfly Bouquets. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
