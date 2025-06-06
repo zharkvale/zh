@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка и оплата - Butterfly Bouquets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .delivery-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .delivery-title, .payment-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .delivery-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .delivery-option {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .delivery-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .delivery-time {
+            font-size: 24px;
+            color: #ff69b4;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .delivery-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .delivery-price {
+            font-size: 28px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .delivery-note {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .payment-section {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .payment-option {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .payment-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .payment-title-card {
+            font-size: 24px;
+            color: #ff69b4;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .payment-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .payment-note {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="left-section">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Логотип" class="logo">
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-button" onclick="window.location.href='index.html#products'">Каталог</button>
+                <button class="nav-button" onclick="window.location.href='index.html#contacts'">Контакты</button>
+                <button class="nav-button" onclick="window.location.href='index.html#reviews'">Отзывы</button>
+                <button class="nav-button active" onclick="window.location.href='delivery.html'">Доставка и оплата</button>
+            </nav>
+        </div>
+        <button class="message-button" onclick="openQuestionPopup()">
+            <i class="fas fa-comment"></i>
+        </button>
+    </header>
+
+    <main>
+        <section class="delivery-section">
+            <h1 class="delivery-title">Доставка</h1>
+            <div class="delivery-options">
+                <div class="delivery-option">
+                    <div class="delivery-time">В четырехчасовом интервале</div>
+                    <div class="delivery-description">Стандартная доставка по городу</div>
+                    <div class="delivery-price">0₽</div>
+                </div>
+                
+                <div class="delivery-option">
+                    <div class="delivery-time">К назначенному времени</div>
+                    <div class="delivery-description">Доставка к точному времени по городу</div>
+                    <div class="delivery-note">*допускается техническое опоздание до 15 минут</div>
+                    <div class="delivery-price">790₽</div>
+                </div>
+                
+                <div class="delivery-option">
+                    <div class="delivery-time">24 часа</div>
+                    <div class="delivery-description">Доставка по Лен. области</div>
+                    <div class="delivery-price">От 500₽</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-section">
+            <h1 class="payment-title">Оплата</h1>
+            <div class="payment-options">
+                <div class="payment-option">
+                    <div class="payment-title-card">При получении заказа</div>
+                    <div class="payment-description">
+                        Оплатить заказ можно при получении наличными. Так же, для Вашего же удобства, Вы можете оплатить заказ переводом на карту курьера, через мобильный банк.
+                    </div>
+                    <div class="payment-note">
+                        При оформлении заказа заранее выбирайте удобный для Вас способ оплаты.
+                    </div>
+                </div>
+                
+                <div class="payment-option">
+                    <div class="payment-title-card">При оформлении заказа</div>
+                    <div class="payment-description">
+                        В случае, если Вы готовы оплатить заказ сразу, Вы можете сделать это на сайте с помощью банковской карты. Наш менеджер отправит Вам ссылку на оплату в любой удобный для Вас мессенджер.
+                    </div>
+                    <div class="payment-note">
+                        Так же, для вашего удобства, Вы можете оплатить заказ переводом на карту через приложение мобильного банка (Сбербанк, ВТБ, Тинькофф, Альфа-банк).
+                    </div>
+                </div>
+                
+                <div class="payment-option">
+                    <div class="payment-title-card">Внесение предоплаты</div>
+                    <div class="payment-description">
+                        На свадебные букеты, букеты с гипсофилой, а так же шляпные коробки с цветами необходима предоплата 50% от стоимости заказа.
+                    </div>
+                    <div class="payment-note">
+                        В случае отказа от покупки предоплата не возвращается.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="footer-logo">
+                </div>
+                <p class="footer-description">Светящиеся букеты в Санкт-Петербурге</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <div class="footer-contacts">
+                    <p><i class="fas fa-phone"></i> +7(921)-531-89-60</p>
+                    <p><i class="fas fa-envelope"></i> info@butterfly-bouquets.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ул. Руднева, 2, Санкт-Петербург</p>
+                    <p><i class="fas fa-clock"></i> Время работы для самовывоза: ежедневно 10.00-20.00</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Информация</h3>
+                <ul class="footer-info-list">
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="https://vk.com/club223812708" target="_blank" class="social-link"><i class="fab fa-vk"></i></a>
+                    <a href="https://www.avito.ru/brands/e96a829c23453893444181c5e47b91c1?src=sharing" target="_blank" class="social-link">
+                        <span class="avito-icon">A</span>
+                    </a>
+                    <a href="https://wa.me/79215318960" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Butterfly Bouquets. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Попап для формы вопроса -->
+    <div class="popup-overlay" id="question-popup">
+        <div class="popup-content question-popup-content">
+            <button class="popup-close" onclick="closeQuestionPopup()">&times;</button>
+            <div class="question-form">
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Логотип" class="logo">
+                </div>
+                <h2 class="question-title">Задать вопрос</h2>
+                <div class="form-group">
+                    <label for="phone">Ваш номер телефона</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <div class="form-group">
+                    <label for="question">Задать вопрос</label>
+                    <textarea id="question" name="question" required></textarea>
+                </div>
+                <button class="submit-button" onclick="submitQuestion()">Отправить</button>
+                <p class="privacy-policy">
+                    Нажимая на кнопку, Вы соглашаетесь с <a href="#" class="pink-text">Политикой Конфиденциальности</a> по обработке персональных данных.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомление об отправке -->
+    <div class="notification" id="success-notification">
+        Ваше сообщение отправлено!
+    </div>
+
+    <script>
+        // Функции для работы с попапами
+        function openQuestionPopup() {
+            document.getElementById('question-popup').style.display = 'flex';
+        }
+
+        function closeQuestionPopup() {
+            document.getElementById('question-popup').style.display = 'none';
+        }
+
+        function submitQuestion() {
+            document.getElementById('question-popup').style.display = 'none';
+            showNotification();
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('success-notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Закрытие попапов при клике вне их области
+        window.onclick = function(event) {
+            if (event.target.classList.contains('popup-overlay')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html> 
